@@ -1,0 +1,22 @@
+.heading {
+    text-align: center;
+    color: darkred;
+    font-size: 50px;
+    background-color: goldenrod;
+    text-align: center; 
+
+ gradientOptions= linear, left top, right top, from(#222), to(#222), color-stop(0.5, #fff)
+
+  bg-vendor(gradientOptions)
+  vendor(background-size, 125px 100%)
+  vendor(background-clip, text)
+  vendor(animation-name, shimmer)
+  vendor(animation-duration, 2s)
+  vendor(animation-iteration-count, infinite)
+  background-repeat: no-repeat
+  background-position: 0 0
+  background-color: #222
+
+   
+}
+
