@@ -1,0 +1,10 @@
+CREATE DATABASE clothing_db;
+USE clothing_db;
+
+CREATE TABLE outfits (
+  id INT NOT NULL AUTO_INCREMENT,
+  part VARCHAR(45) NOT NULL,
+  category VARCHAR(45) NOT NULL,
+  color VARCHAR(45) NOT NULL,
+  PRIMARY KEY (id)
+);
