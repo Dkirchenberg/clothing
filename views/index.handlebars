@@ -1,0 +1,61 @@
+<div class="container">
+	<h1> My Life in Pieces </h1>
+	
+	<select class="form-control form-control-lg">
+      <option>Work</option>
+      <option>Everyday</option>
+      <option>Evening</option>
+    </select>
+
+	<button class="btn btn-primary btn-lg">Make my selection</button>
+	
+	<div class="row">
+		<div class="col-sm-12 text-center" id="top-bar">
+			<img src= "https://comps.canstockphoto.com/clothes-and-fashion-accessories-clipart-vector_csp18805155.jpg" alt="Clothes" height="400" width="700">
+      <br>/>
+		</div>
+		<div class="col-sm-6 text-center" class="task">
+			<div class="row">
+			  {{#each clothes}}
+			  	{{#unless this.devoured}}
+				<div class="col-sm-9 text-center">
+					<img>{{this.id}}. {{this.burger_name}}
+					</img>
+				  		<!-- {{this.Date}} -->
+				</div>
+				<div class="col-sm-3 text-center">
+					<form class="button-size devour-form">
+						<input input type="hidden" type="text" class="burger_id" value={{this.id}}>
+						<!-- Solution 2 Edit: Added input for a customer name -->
+						<input class="custom-input" input type="text" placeholder="Customer?"><br>'
+						<!-- end edit -->
+						<button type="submit" class="btn btn-default mt-1">Devour it!</button>
+					</form>
+				</div>
+				
+			  {{/each}}
+			</div>
+		</div>
+		<div class="col-sm-6 text-center" class="task">
+			  {{#each burger}}
+			  	{{#if this.devoured}}
+				<!--
+					Solution 2 Edit: If a customer name gets sent with a burger
+					list the customers name
+					-->
+
+			  		{{#if this.Customer.customer}}
+			  			<input class="form-control" type="text" placeholder="{{this.id}} . {{this.burger_name}}  (Eaten by {{this.Customer.customer}})" readonly>
+					<!--
+					Solution 2 Edit: If there is no customer name,
+					just list the burger.
+						-->
+			  		{{else}}
+			  			<input class="form-control" type="text" placeholder="{{this.id}} . {{this.burger_name}}" readonly>
+			  		{{/if}}
+				{{/if}}
+			  {{/each}}
+		</div>
+	</div>
+</div>
+
